@@ -13,6 +13,11 @@ npm install --save react-native-video-player react-native-video react-native-vec
 react-native link react-native-video
 react-native link react-native-vector-icons
 ```
+Add these implementations in build.gradle (dependencies)
+```
+implementation "com.fasterxml.jackson.core:jackson-core:2.11.1"
+implementation "com.fasterxml.jackson.core:jackson-databind:2.11.1"
+```
 
 ## Props
 

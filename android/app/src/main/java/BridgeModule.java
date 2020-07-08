@@ -20,11 +20,15 @@ public class BridgeModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void showFullscreen(String videoUri, int duraitonToSeek) {
+    public void showFullscreen(String videoUri, int duraitonToSeek, String videoHeadersJson) {
         duration = duraitonToSeek;
         Context context = getReactApplicationContext();
         Intent intent = new Intent(context, VideoActivity.class);
         intent.putExtra("VIDEO_URL", videoUri);
+        intent.putExtra("VIDEO_HEADERS_JSON", videoHeadersJson);
         getCurrentActivity().startActivity(intent);
+    }
+    public void showFullscreen(String videoUri, int duraitonToSeek) {
+        showFullscreen(videoUri, duraitonToSeek, "");
     }
 }
